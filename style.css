@@ -1,0 +1,17 @@
+body{
+    height: 95 vh; 
+    width: 95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(253, 207, 1);
+    background-color: rgb(86, 224, 86);
+    font-family: 'Courier New', Courier, monospace;
+}
+h1{
+    margin: 0.5px;
+}
+p{
+    margin: 0.5px;
+}
