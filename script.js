@@ -10,11 +10,15 @@ let direcao = "direita"; //controla a direção da cobrinha.
 let comida ={
     x: Math.floor(Math.random()* 15 +1)* caixa, //Math.random escolhe um número aleatório até 1.
     y: Math.floor(Math.random()* 15 +1)* caixa //Math.floor tira a parte flutuante (0.) desse número.
-}; //Vai gerar números aleatórios tirando a parte flutuante até o númeroque foi setado
-let pontuacao = 0;
-let pontos = document.getElementById('pontos');
-let b = document.getElementById('b')
-let borda = false
+}; //Vai gerar números aleatórios tirando a parte flutuante até o número que foi setado.
+
+let pontuacao = 0; //Define o valor da pontuação.
+
+let pontos = document.getElementById('pontos'); //Coloca a pontuação no index.
+
+let b = document.getElementById('b'); //Botão de borda
+
+let borda = false //Declara a borda
 
 
 b.onclick= () => {
@@ -26,11 +30,11 @@ b.onclick= () => {
         borda = false
         moldura.innerHTML = 'NÃO'
     }
-}
+} //Função que ativa e desativa a borda
 
 function criarBG(){
-    contexto.fillStyle = "lightblue";//Trabalha com o estilo do canvas.
-    contexto.fillRect(0,0,16 * caixa, 16 * caixa);//Desenhará o espaço onde ocorrerá a renderização e trabalha com 4 parâmetros: posição de x e y, altura e largura.
+    contexto.fillStyle = "lightblue"; //Trabalha com o estilo do canvas.
+    contexto.fillRect(0,0,16 * caixa, 16 * caixa); //Desenhará o espaço onde ocorrerá a renderização e trabalha com 4 parâmetros: posição de x e y, altura e largura.
 }
 
 function criarCobra() {
@@ -58,13 +62,13 @@ function tecla(b){
         borda = false
         moldura.innerHTML = 'NÃO'
     }
-}
+} //Configura tecla de formação de borda
 
 function restart(r){
     if (r.keyCode==82){
         reiniciar()
     }
-}
+} //configura tecla restart
 
 function atualizar(event){
     if(event.keyCode == 37 && direcao != "direita") direcao = "esquerda"; 
@@ -129,7 +133,7 @@ function play(){
         comida.y = Math.floor(Math.random()* 15 + 1)* caixa;
 
         pontuacao=pontuacao+ 100;
-        pontos.innerHTML = pontuacao
+        pontos.innerHTML = pontuacao //Adiciona a pontuação.
     }
 
     let cabecaNova = {
